@@ -85,23 +85,21 @@ export default {
     };
   },
   methods: {
-  createPDF () {
-    let pdfName = 'offer-letter'; 
-    var doc = new jsPDF();
-     var lMargin=15; //left margin in mm
-    var rMargin=15; //right margin in mm
-    var pdfInMM=210;  // width of A4 in mm
-    var pageCenter=pdfInMM/2;
-    var pageleft=20;
+    createPDF() {
+      let pdfName = "offer-letter";
+      var lMargin = 15; //left margin in mm
+      var rMargin = 15; //right margin in mm
+      var pdfInMM = 210; // width of A4 in mm
+      var pageCenter = pdfInMM / 2;
+      var pageleft = 20;
 
-    
-    var doc = new jsPDF("p","mm","a4");
-    var paragraph= `Dear ${this.name},\n\n We are delighted to offer you the position of ${this.position} at our company, ${this.companyName} starting from ${this.startDate} for a period of ${this.months} until ${this.endDate}`;
+      var doc = new jsPDF("p", "mm", "a4");
+      var paragraph = `Dear ${this.name},\nWe are delighted to offer you the position of ${this.position} at our company, ${this.companyName} starting from ${this.startDate} for a period of ${this.months} until ${this.endDate}`;
 
-    var lines =doc.splitTextToSize(paragraph, (pdfInMM-lMargin-rMargin));
-    doc.text("Offer letter",pageCenter,20,'center')
-    doc.text(lines,pageleft,20,'left'); //see this line
-     doc.save(pdfName + '.pdf');
+      var lines = doc.splitTextToSize(paragraph, pdfInMM - lMargin - rMargin);
+      doc.text("OFFER LETTER", pageCenter, 20, "center");
+      doc.text(lines, pageleft, 40, "left"); //see this line
+      doc.save(pdfName + ".pdf");
     }
   }
 };
