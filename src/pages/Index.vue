@@ -1,25 +1,36 @@
 <template>
   <q-page class="flex">
+    <div class="col left-side q-pa-md">
 
-    <div class="col left-side q-pa-sm">
-      Place form here
+      <q-input outlined v-model="name" label="Enter the name of the recipient" />
+
+      <q-input outlined v-model="startDate" label="The contract begins on" />
+
+      <q-input outlined v-model="endDate" label="Ending date" />
+
     </div>
 
     <div class="col right-side q-pa-sm">
-      Place final document preview here
+      <div class="text-center text-h5 text-weight-light">Document Preview</div>
     </div>
-
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex'
-}
+  name: "PageIndex",
+  data() {
+    return {
+      name: "",
+      startDate: "",
+      endDate: "",
+    };
+  }
+};
 </script>
 
 <style lang="scss">
-.right-side{
+.right-side {
   background-color: $cyan-2;
 }
 </style>
