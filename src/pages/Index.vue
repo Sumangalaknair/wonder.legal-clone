@@ -97,6 +97,7 @@ export default {
       var paragraph = `Dear ${this.name},\nWe are delighted to offer you the position of ${this.position} at our company, ${this.companyName} starting from ${this.startDate} for a period of ${this.months} until ${this.endDate}`;
 
       var lines = doc.splitTextToSize(paragraph, pdfInMM - lMargin - rMargin);
+      doc.setLineHeightFactor(1.5);
       doc.text("OFFER LETTER", pageCenter, 20, "center");
       doc.text(lines, pageleft, 40, "left"); //see this line
       doc.save(pdfName + ".pdf");
