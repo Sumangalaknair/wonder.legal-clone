@@ -83,9 +83,9 @@ export default {
   },
   methods: {
   createPDF () {
-    let pdfName = 'test'; 
+    let pdfName = 'offer-letter'; 
     var doc = new jsPDF();
-    doc.text("Hello World", 10, 10);
+    doc.text("OFFER LETTER", 85, 20);
     doc.save(pdfName + '.pdf');
   }
 }
