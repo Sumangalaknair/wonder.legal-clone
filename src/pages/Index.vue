@@ -32,7 +32,7 @@
       <br />
       <br />
 
-      <div>
+      <div class="document">
         <p>
           Dear <b>{{ name }}</b> <span v-if="name.length < 1">______</span> ,
           <br />
@@ -48,7 +48,12 @@
           <b>{{ endDate }}</b> <span v-if="endDate.length < 1">________</span>.
         </p>
       </div>
-    </div>
+      
+      <br> 
+      <q-btn color="primary" icon="get_app" label="Download PDF" />
+    </div> <!-- end col -->
+
+    {{ paragraph }}
   </q-page>
 </template>
 
