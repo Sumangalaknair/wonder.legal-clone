@@ -46,9 +46,9 @@
           <br />
 
           We are delighted to offer you the position of <b>{{ position }}</b>
-          <span v-if="position.length < 1">________</span> at out company,
+          <span v-if="position.length < 1">________</span> at our company,
           <b>{{ companyName }}</b>
-          <span v-if="companyName.length < 1">________</span> starting from:
+          <span v-if="companyName.length < 1">________</span> starting from
           <b>{{ startDate }}</b>
           <span v-if="startDate.length < 1">________</span> for a period of
           <b>{{ months }}</b>
