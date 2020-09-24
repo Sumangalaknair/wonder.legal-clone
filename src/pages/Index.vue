@@ -94,7 +94,7 @@ export default {
     var pageCenter=pdfInMM/2;
     
     var doc = new jsPDF("p","mm","a4");
-    var paragraph="Apple's iPhone 7 is officially upon us. After a week of pre-orders, the latest in the iPhone lineup officially launches today.\n\nEager Apple fans will be lining up out the door at Apple and carrier stores around the country to grab up the iPhone 7 and iPhone 7 Plus, while Android owners look on bemusedly.\n\nDuring the Apple Event last week, the tech giant revealed a number of big, positive changes coming to the iPhone 7. It's thinner. The camera is better. And, perhaps best of all, the iPhone 7 is finally water resistant.\n\nStill, while there may be plenty to like about the new iPhone, there's plenty more that's left us disappointed. Enough, at least, to make smartphone shoppers consider waiting until 2017, when Apple is reportedly going to let loose on all cylinders with an all-glass chassis design.";
+    var paragraph= `Dear ${this.name}, We are delighted to offer you the position of ${this.position} at our company, ${this.companyName} starting from ${this.startDate} for a period of ${this.months} until ${this.endDate}`;
 		
     var lines =doc.splitTextToSize(paragraph, (pdfInMM-lMargin-rMargin));
     doc.text(lines,pageCenter,20,'center'); //see this line
