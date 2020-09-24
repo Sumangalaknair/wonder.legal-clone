@@ -110,4 +110,7 @@ export default {
 .left-side {
   background-color: $cyan-2;
 }
+p {
+  font-size: 18px;
+}
 </style>
