@@ -8,6 +8,9 @@
       />
       <br />
 
+      <q-input outlined v-model="companyName" label="Name of the organization" />
+      <br />
+
       <q-input outlined v-model="startDate" label="The contract begins on" />
       <br />
 
@@ -21,7 +24,7 @@
       <div class="text-center text-h5 text-weight-light">Document Preview</div> <br>
 
       <div>
-        <p>Dear {{ name }}, <br> We are delighted to offer you the position of Software Developer at out company, {{ companyName }} starting from: {{startDate}} for a period of {{ months }} months until {{ endDate }}.</p>
+        <p>Dear <b>{{ name }}</b>, <br> We are delighted to offer you the position of Software Developer at out company, <b>{{ companyName }}</b> starting from: <b>{{startDate}}</b> for a period of <b>{{ months }}</b> months until <b>{{ endDate }}</b>.</p>
       </div>
     </div>
   </q-page>
