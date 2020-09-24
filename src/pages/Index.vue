@@ -92,12 +92,15 @@ export default {
     var rMargin=15; //right margin in mm
     var pdfInMM=210;  // width of A4 in mm
     var pageCenter=pdfInMM/2;
+    var pageleft=20;
+
     
     var doc = new jsPDF("p","mm","a4");
-    var paragraph= `Dear ${this.name}, We are delighted to offer you the position of ${this.position} at our company, ${this.companyName} starting from ${this.startDate} for a period of ${this.months} until ${this.endDate}`;
-		
+    var paragraph= `Dear ${this.name},\n\n We are delighted to offer you the position of ${this.position} at our company, ${this.companyName} starting from ${this.startDate} for a period of ${this.months} until ${this.endDate}`;
+
     var lines =doc.splitTextToSize(paragraph, (pdfInMM-lMargin-rMargin));
-    doc.text(lines,pageCenter,20,'center'); //see this line
+    doc.text("Offer letter",pageCenter,20,'center')
+    doc.text(lines,pageleft,20,'left'); //see this line
      doc.save(pdfName + '.pdf');
     }
   }
