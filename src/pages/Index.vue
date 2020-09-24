@@ -8,7 +8,14 @@
       />
       <br />
 
-      <q-input outlined v-model="companyName" label="Name of the organization" />
+      <q-input outlined v-model="position" label="Enter the position" />
+      <br />
+
+      <q-input
+        outlined
+        v-model="companyName"
+        label="Name of the organization"
+      />
       <br />
 
       <q-input outlined v-model="startDate" label="The contract begins on" />
@@ -21,10 +28,25 @@
     </div>
 
     <div class="col right-side q-pa-sm">
-      <div class="text-center text-h5 text-weight-light">Document Preview</div> <br>
+      <div class="text-center text-h5 text-weight-light">Document Preview</div>
+      <br />
+      <br />
 
       <div>
-        <p>Dear <b>{{ name }}</b>, <br> We are delighted to offer you the position of Software Developer at out company, <b>{{ companyName }}</b> starting from: <b>{{startDate}}</b> for a period of <b>{{ months }}</b> months until <b>{{ endDate }}</b>.</p>
+        <p>
+          Dear <b>{{ name }}</b> <span v-if="name.length < 1">______</span> ,
+          <br />
+
+          We are delighted to offer you the position of <b>{{ position }}</b>
+          <span v-if="position.length < 1">________</span> at out company,
+          <b>{{ companyName }}</b>
+          <span v-if="companyName.length < 1">________</span> starting from:
+          <b>{{ startDate }}</b>
+          <span v-if="startDate.length < 1">________</span> for a period of
+          <b>{{ months }}</b>
+          <span v-if="months.length < 1">________</span> months until
+          <b>{{ endDate }}</b> <span v-if="endDate.length < 1">________</span>.
+        </p>
       </div>
     </div>
   </q-page>
@@ -36,6 +58,7 @@ export default {
   data() {
     return {
       name: "",
+      position: "",
       startDate: "",
       months: "",
       endDate: "",
