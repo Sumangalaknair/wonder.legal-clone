@@ -58,7 +58,7 @@
       </div>
 
       <br />
-      <q-btn color="primary" icon="get_app" label="Download PDF" />
+      <q-btn color="primary" @click="createPDF" icon="get_app" label="Download PDF" />
     </div>
     <!-- end col -->
 
@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import { jsPDF } from "jspdf";
+
 export default {
   name: "PageIndex",
   data() {
@@ -78,7 +80,15 @@ export default {
       endDate: "",
       companyName: ""
     };
+  },
+  methods: {
+  createPDF () {
+    let pdfName = 'test'; 
+    var doc = new jsPDF();
+    doc.text("Hello World", 10, 10);
+    doc.save(pdfName + '.pdf');
   }
+}
 };
 </script>
 
