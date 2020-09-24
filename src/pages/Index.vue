@@ -1,12 +1,12 @@
 <template>
   <q-page class="flex">
 
-    <div class="col left-side">
-      Hello
+    <div class="col left-side q-pa-sm">
+      Place form here
     </div>
 
-    <div class="col right-side">
-      Bye
+    <div class="col right-side q-pa-sm">
+      Place final document preview here
     </div>
 
   </q-page>
