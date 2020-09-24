@@ -1,38 +1,46 @@
 <template>
   <q-page class="flex">
     <div class="col left-side q-pa-md">
-      <q-input
-        outlined
-        v-model="name"
-        label="Enter the name of the recipient"
-      />
-      <br />
+      <q-scroll-area class="fit">
+        <q-input
+          outlined
+          v-model="name"
+          label="Enter the name of the recipient"
+        />
+        <br />
 
-      <q-input outlined v-model="position" label="Enter the position" />
-      <br />
+        <q-input outlined v-model="position" label="Enter the position" />
+        <br />
 
-      <q-input
-        outlined
-        v-model="companyName"
-        label="Name of the organization"
-      />
-      <br />
+        <q-input
+          outlined
+          v-model="companyName"
+          label="Name of the organization"
+        />
+        <br />
 
-      <q-input outlined v-model="startDate" label="The contract begins on" />
-      <br />
+        <q-input outlined v-model="startDate" label="The contract begins on" />
+        <br />
 
-      <q-input outlined v-model="months" label="Duration in months" />
-      <br />
+        <q-input outlined v-model="months" label="Duration in months" />
+        <br />
 
-      <q-input outlined v-model="endDate" label="Ending date" /> <br />
+        <q-input outlined v-model="endDate" label="Ending date" /> <br />
+      </q-scroll-area>
     </div>
 
-    <div class="col right-side q-pa-sm">
-      <div class="text-center text-h5 text-weight-light">Document Preview</div>
+    <div class="col right-side q-pa-md">
+      <div class="text-center text-h5 text-weight-regular">
+        Document Preview
+      </div>
+      <q-separator />
       <br />
       <br />
 
       <div class="document">
+        <div class="text-h5 text-center text-weight-light">OFFER LETTER</div>
+        <br />
+        <br />
         <p>
           Dear <b>{{ name }}</b> <span v-if="name.length < 1">______</span> ,
           <br />
@@ -48,10 +56,11 @@
           <b>{{ endDate }}</b> <span v-if="endDate.length < 1">________</span>.
         </p>
       </div>
-      
-      <br> 
+
+      <br />
       <q-btn color="primary" icon="get_app" label="Download PDF" />
-    </div> <!-- end col -->
+    </div>
+    <!-- end col -->
 
     {{ paragraph }}
   </q-page>
@@ -74,7 +83,7 @@ export default {
 </script>
 
 <style lang="scss">
-.right-side {
+.left-side {
   background-color: $cyan-2;
 }
 </style>
