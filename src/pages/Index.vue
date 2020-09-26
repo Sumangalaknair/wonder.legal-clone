@@ -120,8 +120,8 @@ export default {
       doc.text(lines, pageleft, 40, "left"); //see this line
       doc.save(pdfName + ".pdf");
       this.$q.notify({
-        message: "Jim pinged you.",
-        color: "purple",
+        message: "Downloaded PDF!",
+        color: "secondary",
       });
     },
     showLoading() {
