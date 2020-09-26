@@ -9,6 +9,8 @@
           WONDER.LEGAL CLONE
         </q-toolbar-title>
 
+        <q-btn flat round dense icon="more_vert" />
+
       </q-toolbar>
     </q-header>
 
