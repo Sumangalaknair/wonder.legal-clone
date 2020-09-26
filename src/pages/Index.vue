@@ -28,12 +28,6 @@
         <q-input outlined v-model="endDate" label="Ending date" /> <br />
       </q-scroll-area>
     </div>
-    <div id="loader-bg" v-if="show" class="preloader">
-      <div id="pulse-loader">
-        <div class="pulse-loader-1"></div>
-        <div class="pulse-loader-2"></div>
-      </div>
-    </div>
     <div class="col right-side q-pa-md">
       <div class="text-center text-h5 text-weight-regular">
         Document Preview
