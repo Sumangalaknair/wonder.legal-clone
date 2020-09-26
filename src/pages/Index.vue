@@ -60,11 +60,11 @@
       <q-btn
         v-if="
           name.length > 0 &&
-            position.length > 0 &&
-            companyName.length > 0 &&
-            startDate.length > 0 &&
-            months.length > 0 &&
-            endDate.length > 0
+          position.length > 0 &&
+          companyName.length > 0 &&
+          startDate.length > 0 &&
+          months.length > 0 &&
+          endDate.length > 0
         "
         color="primary"
         @click="createPDF"
@@ -79,9 +79,7 @@
         icon="get_app"
         label="Download PDF"
       >
-        <q-tooltip>
-          Please fill all fields to download PDF!
-        </q-tooltip>
+        <q-tooltip> Please fill all fields to download PDF! </q-tooltip>
       </q-btn>
     </div>
     <!-- end col -->
@@ -121,6 +119,10 @@ export default {
       doc.text("OFFER LETTER", pageCenter, 20, "center");
       doc.text(lines, pageleft, 40, "left"); //see this line
       doc.save(pdfName + ".pdf");
+      this.$q.notify({
+        message: "Jim pinged you.",
+        color: "purple",
+      });
     },
     showLoading() {
       const spinner =
@@ -133,7 +135,7 @@ export default {
         spinnerSize: 140,
         backgroundColor: "white",
         message: "<b>Please wait while the data is loading...</b>",
-        messageColor: "black"
+        messageColor: "black",
       });
       this.timer = setTimeout(() => {
         this.$q.loading.hide();
@@ -145,12 +147,12 @@ export default {
         clearTimeout(this.timer);
         this.$q.loading.hide();
       }
-    }
+    },
   },
 
   beforeMount() {
     this.showLoading();
-  }
+  },
 };
 </script>
 
