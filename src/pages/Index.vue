@@ -64,11 +64,32 @@
 
       <br />
       <q-btn
+        v-if="
+          name.length > 0 &&
+            position.length > 0 &&
+            companyName.length > 0 &&
+            startDate.length > 0 &&
+            months.length > 0 &&
+            endDate.length > 0
+        "
         color="primary"
         @click="createPDF"
         icon="get_app"
         label="Download PDF"
       />
+
+      <q-btn
+        v-else
+        color="primary"
+        disabled
+        @click="createPDF"
+        icon="get_app"
+        label="Download PDF"
+      >
+        <q-tooltip>
+          Please fill all fields to download PDF!
+        </q-tooltip>
+      </q-btn>
     </div>
     <!-- end col -->
   </q-page>
