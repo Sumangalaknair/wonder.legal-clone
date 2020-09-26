@@ -82,7 +82,6 @@
         v-else
         color="primary"
         disabled
-        @click="createPDF"
         icon="get_app"
         label="Download PDF"
       >
@@ -109,7 +108,6 @@ export default {
       months: "",
       endDate: "",
       companyName: "",
-      show: true
     };
   },
   methods: {
