@@ -25,7 +25,7 @@
 
         :width="200"
         :breakpoint="500"
-        bordered
+        elevated
         content-class="bg-grey-3"
       >
         <q-scroll-area class="fit">
