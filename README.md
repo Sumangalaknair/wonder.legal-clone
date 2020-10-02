@@ -4,6 +4,7 @@ Get Templates of legal documents
 
 ## Install the dependencies
 ```bash
+npm install -g @quasar/cli
 npm install
 ```
 
